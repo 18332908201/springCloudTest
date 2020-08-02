@@ -1,0 +1,29 @@
+server:
+  port: 9903
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9900/eureka/
+
+spring:
+  application:
+    name: zuul-service
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: false
+
+zuul:
+  routes:
+    server:
+      path: /server/**
+      serviceId: provide-service
+      sensitiveHeaders: "*"
+    web:
+      path: /web/**
+      serviceId: web-service
+      sensitiveHeaders: "*"
