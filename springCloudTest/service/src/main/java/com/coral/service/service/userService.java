@@ -13,4 +13,15 @@ public class userService {
     public User selectUser(Long id){
         return userMapper.selectByPrimaryKey(id);
     }
+
+    public boolean add(){
+       User u=new User();
+       u.setUsername("2");
+       u.setPassword("2");
+       int insert = userMapper.insert(u);
+       if(insert!=1){
+           return false;
+       }
+        return true;
+    }
 }

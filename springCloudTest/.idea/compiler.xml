@@ -8,9 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="consumer" />
         <module name="zuul" />
-        <module name="service" />
-        <module name="config" />
         <module name="eureka" />
+        <module name="config" />
+        <module name="service" />
       </profile>
     </annotationProcessing>
   </component>

@@ -11,12 +11,12 @@ eureka:
 
 spring:
   application:
-    name: zuul-service
+    name: api
   cloud:
     loadbalancer:
       retry:
         enabled: false
-
+#server： 随便起   path： 前缀   serviceId：服务名（application.name）
 zuul:
   routes:
     server:
